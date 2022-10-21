@@ -2,7 +2,7 @@
 const express = require("express");
 const bodyparser = require("body-parser");
 const https = require("https");
-const { timeStamp } = require("console");
+
 const app = express();
 
 app.use(bodyparser.urlencoded({extended:true}));
@@ -61,6 +61,7 @@ app.post("/", function(req,res){
 
             icon = weatherData.weather[0].icon;
             
+            // this is a function that convert unix time to hour,minutes and second
             function timeConverter(unix_timestamp){
                 var date = new Date(unix_timestamp * 1000);
 
@@ -109,6 +110,18 @@ app.get("/", function(req,res){
         sunset_time : sunset, imageurl : icon, Weather_description : description
    })
     
+ temp = [0];
+  humidity = [];
+ 
+ name = "";
+// let imageurl = "";
+ sunset =[];
+ sunrise = [];
+ hours=[];
+ minutes=[];
+ seconds = [];
+ icon = "";
+ description = "";
    
 })
    
