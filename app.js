@@ -90,9 +90,9 @@ app.post("/", function(req,res){
 
                 return time;
             }
-            // console.log(sunrise);
+            console.log(sunrise);
             
-            // console.log(sunset);
+            console.log(sunset);
             // console.log(icon);
             res.redirect("/");
         })
