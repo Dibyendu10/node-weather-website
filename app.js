@@ -120,7 +120,7 @@ app.get("/", function(req,res){
  hours=[];
  minutes=[];
  seconds = [];
- icon = "";
+//  icon = "";
  description = "";
    
 })
