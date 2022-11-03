@@ -15,11 +15,11 @@ let temp = [0];
 let name = "";
 let humidity = [];
 // let imageurl = "";
-let sunrise = [];
-let sunset =[];
-let hours=[];
-let minutes=[];
-let seconds = [];
+// let sunrise = [];
+// let sunset =[];
+// let hours=[];
+// let minutes=[];
+// let seconds = [];
 let icon = "";
 let description = "";
 
@@ -55,44 +55,44 @@ app.post("/", function(req,res){
 
            
 
-            sunrise = timeConverter(weatherData.sys.sunrise);
+            // sunrise = timeConverter(weatherData.sys.sunrise);
         
-            sunset = timeConverter(weatherData.sys.sunset);
+            // sunset = timeConverter(weatherData.sys.sunset);
 
             icon = weatherData.weather[0].icon;
             
             // this is a function that convert unix time to hour,minutes and second
-            function timeConverter(unix_timestamp){
-                var date = new Date(unix_timestamp * 1000);
+            // function timeConverter(unix_timestamp){
+            //     var date = new Date(unix_timestamp * 1000);
 
-                     hours = date.getHours();
-                     minutes = "0" +  date.getMinutes();
-                     seconds = "0" + date.getSeconds();
+            //          hours = date.getHours();
+            //          minutes = "0" +  date.getMinutes();
+            //          seconds = "0" + date.getSeconds();
 
-                function formattime(hours) {
-                    var h =  hours % 12;
-                    if(h == 0) {
-                        h = 12;
-                        return h + ":" + minutes.substr(-2) + ":" + seconds.substr(-2) + (hours < 12 ? ' am' : ' pm'); ;
-                    }
+            //     function formattime(hours) {
+            //         var h =  hours % 12;
+            //         if(h == 0) {
+            //             h = 12;
+            //             return h + ":" + minutes.substr(-2) + ":" + seconds.substr(-2) + (hours < 12 ? ' am' : ' pm'); ;
+            //         }
 
-                    if(h < 10) {
-                        return '0'+ h + ":" + minutes.substr(-2) + ":" + seconds.substr(-2) + (hours < 12 ? ' am' : ' pm');
-                    }
-                    else {
-                        return h + ":" + minutes.substr(-2) + ":" + seconds.substr(-2) + (hours < 12 ? ' am' : ' pm');
-                    }
-                }
+            //         if(h < 10) {
+            //             return '0'+ h + ":" + minutes.substr(-2) + ":" + seconds.substr(-2) + (hours < 12 ? ' am' : ' pm');
+            //         }
+            //         else {
+            //             return h + ":" + minutes.substr(-2) + ":" + seconds.substr(-2) + (hours < 12 ? ' am' : ' pm');
+            //         }
+            //     }
 
                
-                var time = formattime(hours);
+            //     var time = formattime(hours);
 
 
-                return time;
-            }
-            console.log(sunrise);
+            //     return time;
+            // }
+            // console.log(sunrise);
             
-            console.log(sunset);
+            // console.log(sunset);
             // console.log(icon);
             res.redirect("/");
         })
@@ -106,8 +106,8 @@ app.get("/", function(req,res){
     
     // res.sendFile(__dirname + "/index.html");
     res.render("list", {today_temp : temp, nameOfTheCity : name,
-        today_humidity : humidity, sunrise_time : sunrise,
-        sunset_time : sunset, imageurl : icon, Weather_description : description
+        today_humidity : humidity, 
+         imageurl : icon, Weather_description : description
    })
     
  temp = [0];
@@ -115,11 +115,7 @@ app.get("/", function(req,res){
  
  name = "";
 // let imageurl = "";
- sunset =[];
- sunrise = [];
- hours=[];
- minutes=[];
- seconds = [];
+ 
 //  icon = "";
  description = "";
    
