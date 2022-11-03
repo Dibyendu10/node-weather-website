@@ -20,7 +20,7 @@ Built a weather website that allows users to get weather data from any location 
 
 - Visit the [website](https://sheltered-woodland-00717.herokuapp.com/)
 - Enter the city name
-- Click search button
+- Click Go button
 - The app shows current weather information of the given location
 
 
